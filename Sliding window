@@ -1,0 +1,25 @@
+Sliding window
+Code:
+#include<stdio.h>
+int main(){
+    int w, i, f, frames[50];
+    printf("Enter window size: ");
+    scanf("%d", &w);
+    printf("Enter no. of frames to transmit: ");
+    scanf("%d", &f);
+    printf("Enter %d frames\n", f);
+    for (i = 1; i <= f; i++) {
+        scanf("%d", &frames[i]);
+    }
+    printf("With sliding window protocol, the frames will be sent in the following manner\n\n");
+    printf("After sending\n");
+    for (i = 1; i <= f; i++) {
+        printf("%d\n", frames[i]);
+        if (i % w == 0) {
+            printf("Acknowledgement of above frames sent is received\n");
+        }
+    }
+    if (f % w != 0)
+        printf("Acknowledgement of above sent frames is received\n");
+    return 0;
+}
